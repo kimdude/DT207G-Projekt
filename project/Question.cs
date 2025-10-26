@@ -1,3 +1,20 @@
-//Klass för frågor
 
-//Klass innehållande fråga, svar och eventuell boolean för rätt eller fel
+namespace questions
+{
+    //Klass för frågor
+    public class Question
+    {
+        public string? Query
+        {
+            get; set;
+        }
+        public string? Answer
+        {
+            get; set;
+        }
+        public Boolean? Correct
+        {
+            get; set;
+        }
+    }    
+}
