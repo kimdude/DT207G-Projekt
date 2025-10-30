@@ -1,7 +1,7 @@
+/* Klass för frågor */
 
 namespace questions
 {
-    //Klass för frågor
     public class Question
     {
         public string? Query
@@ -16,5 +16,5 @@ namespace questions
         {
             get; set;
         }
-    }    
+    }
 }
