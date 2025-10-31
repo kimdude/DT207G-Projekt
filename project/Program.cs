@@ -1,13 +1,19 @@
-﻿/* Lösning för projektuppgift */
+﻿/* Lösning för projektuppgift - Quiz */
 
 //SKAPA VIOLET FIL !!!!!!!!!
 
-namespace quiz
+using categories;
+using categoryManager;
+
+namespace program
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            CategoryManager manager = new CategoryManager();
+
             while (true)
             {
                 Console.WriteLine("-------------------");
@@ -24,14 +30,15 @@ namespace quiz
                 {
                     case '1':
                         Console.WriteLine("Choose category: \n");
-                        Console.WriteLine("1. History");
-                        Console.WriteLine("2. Geography");
-                        Console.WriteLine("3. Pop culture");
-                        Console.WriteLine("4. Food and drink");
+                        List<Category> allCategories = manager.GetQuestions();
+
+                        for(int i = 0; i < allCategories.Count; i++)
+                        {
+                            Console.WriteLine( i + ". " + allCategories[i].Name);
+                        }
 
                         char quizCategory = Console.ReadKey().KeyChar;
 
-                        //Skapa egen fil för quiz metoder
 
                         break;
 
@@ -42,7 +49,7 @@ namespace quiz
                         Console.WriteLine("3. Pop culture");
                         Console.WriteLine("4. Food and drink");
 
-                        char editCategory = Console.ReadKey().KeyChar;
+                        int catIndex = Console.ReadKey().KeyChar;
 
                         //Läs ut alla frågor och svar med index
 
@@ -61,6 +68,8 @@ namespace quiz
                             Console.WriteLine("\n State answer: ");
                             string? newAnswer = Console.ReadLine();
 
+                            manager.AddQuestion(catIndex, newQuestion!, newAnswer!);
+
                             Console.WriteLine("Question added! Press any button to continue."); //Lägg till kontroll
                             Console.ReadKey();
 
@@ -68,7 +77,9 @@ namespace quiz
                         else if (edit == '2')
                         {
                             Console.WriteLine("\n State index of question: ");
-                            Console.ReadKey();
+                            int questIndex = Console.ReadKey().KeyChar;
+
+                            manager.DeleteQuestion(catIndex, questIndex);
 
                             Console.WriteLine("Question deleted! Press any button to continue."); //Lägg till kontroll 
                             Console.ReadKey();
@@ -76,11 +87,16 @@ namespace quiz
                         }
                         else if (edit == '3')
                         {
+                            Console.WriteLine("\n State index of question: ");
+                            int questIndex = Console.ReadKey().KeyChar;
+
                             Console.WriteLine("\n State question: ");
                             string? editQuestion = Console.ReadLine();
 
                             Console.WriteLine("\n State answer: ");
                             string? editAnswer = Console.ReadLine();
+
+                            manager.UpdateQuestion(catIndex, questIndex, editQuestion!, editAnswer!);
 
                             Console.WriteLine("Question updated! Press any button to continue."); //Lägg till kontroll 
                             Console.ReadKey();

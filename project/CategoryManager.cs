@@ -1,21 +1,83 @@
-/* Metoder för quiz */
+/* Metoder för kategorier */
 
 using categories;
-
-namespace quiz
+using System.Text.Json;
+using questions;
+namespace categoryManager
 {
     public class CategoryManager {
-        // Ta emot kategori, hämta frågor från kategorin
-        public List<Category> SelectQuestions(char category){
-            List<Category> randomQuest = new List<Category>();
+        private string filename = @"quiz.json";
 
-            return randomQuest;
+        //Lista med alla frågor inom kategorin
+        public List<Category> allCategories = new List<Category>();
+
+        //Kontrollerar json-fil
+        public CategoryManager()
+        {
+            if (File.Exists(filename) == true)
+            {
+                string fileContent = File.ReadAllText(filename);
+                allCategories = JsonSerializer.Deserialize<List<Category>>(fileContent)!;
+            }
         }
+
+        /* CRUD till JSON-fil */
+        //Lägger till ny fråga
+        public List<Category> GetQuestions()
+        {
+            return allCategories;
+        }
+
+        public Question AddQuestion(int catIndex, string question, string answer)
+        {
+            Question newQuestion = new Question();
+            newQuestion.Query = question; 
+            newQuestion.Answer = answer;
+
+            allCategories[catIndex].CategorizedQuestions.Add(newQuestion);
+            serialize();
+
+            return newQuestion;
+        }
+
+        //Tar bort fråga
+        public int DeleteQuestion(int catIndex, int questIndex)
+        {
+            allCategories[catIndex].CategorizedQuestions.RemoveAt(questIndex);
+            serialize();
+
+            return questIndex;
+        }
+
+        //Uppdaterar fråga
+        public Question UpdateQuestion(int catIndex, int questIndex, string question, string answer)
+        {
+            Question updatedQuestion = new Question();
+            updatedQuestion.Query = question;
+            updatedQuestion.Answer = answer;
+            allCategories[catIndex].CategorizedQuestions[questIndex] = updatedQuestion;
+
+            serialize();
+
+            return updatedQuestion;
+        }
+
+        //Serialiserar listan och lagrar i json-fil
+        private void serialize()
+        {
+            string jsonString = JsonSerializer.Serialize(allCategories);
+            File.WriteAllText(filename, jsonString);
+        }
+
+
+        /* Quiz funktionalitet */
+        // Ta emot kategori, hämta frågor från kategorin
 
         // Randomisera 5st av frågorna och läs skicka till program.cs
 
         //Ta emot varje svar och lagra i ny List med boolean
         //Räkna ut antal true booleaner och skicka resultat till program.cs
+
 
     }
 }

@@ -1,30 +1,15 @@
 /* Klass för kategorier */
 
-using System.Text.Json;
 using questions;
 namespace categories {
-    //Klass för kategorier
+
     public class Category
     {
-        private string filename = @"quiz.json";
-
-        //Lista med alla frågor och kategorier
-        public List<Question> allQuestions = new List<Question>();
-
-        //List med alla frågor inom kategorin
-        public List<Question> Quiz { get; set; } = new();
-
-        //Kontrollerar json-fil
-        public Category()
+        public string? Name
         {
-            if (File.Exists(filename) == true)
-            {
-                string fileContent = File.ReadAllText(filename);
-                allQuestions = JsonSerializer.Deserialize<List<Question>>(fileContent)!;
-            }
+            get; set;
         }
-
-        //CRUD till json-fil
+        
+        public List<Question> CategorizedQuestions { get; set; } = new List<Question>();
     }
-
 }
