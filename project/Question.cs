@@ -12,9 +12,5 @@ namespace questions
         {
             get; set;
         }
-        public Boolean? Correct
-        {
-            get; set;
-        }
     }
 }

@@ -69,15 +69,5 @@ namespace categoryManager
             File.WriteAllText(filename, jsonString);
         }
 
-
-        /* Quiz funktionalitet */
-        // Ta emot kategori, hämta frågor från kategorin
-
-        // Randomisera 5st av frågorna och läs skicka till program.cs
-
-        //Ta emot varje svar och lagra i ny List med boolean
-        //Räkna ut antal true booleaner och skicka resultat till program.cs
-
-
     }
 }

@@ -4,6 +4,8 @@
 
 using categories;
 using categoryManager;
+using questions;
+using quizManager;
 
 namespace program
 {
@@ -11,14 +13,20 @@ namespace program
     {
         static void Main(string[] args)
         {
+            CategoryManager categoryManager = new CategoryManager();
+            QuizManager quizManager = new QuizManager();
 
-            CategoryManager manager = new CategoryManager();
+            List<Category> allCategories = categoryManager.GetQuestions();
 
             while (true)
             {
-                Console.WriteLine("-------------------");
-                Console.WriteLine("      QUIZ ME      ");
-                Console.WriteLine("-------------------\n\n");
+                Console.Clear();
+
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("============================");
+                Console.WriteLine("          QUIZ ME           ");
+                Console.WriteLine("============================\n\n");
+                Console.ResetColor();
 
                 Console.WriteLine("1. Start quiz");
                 Console.WriteLine("2. Edit quiz");
@@ -29,31 +37,74 @@ namespace program
                 switch (menuChoice)
                 {
                     case '1':
-                        Console.WriteLine("Choose category: \n");
-                        List<Category> allCategories = manager.GetQuestions();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\n\nChoose category: \n");
+                        Console.ResetColor();
 
                         for(int i = 0; i < allCategories.Count; i++)
                         {
                             Console.WriteLine( i + ". " + allCategories[i].Name);
                         }
 
-                        char quizCategory = Console.ReadKey().KeyChar;
+                        char quizCatChar = Console.ReadKey().KeyChar;
+                        int quizCategory = quizCatChar - '0';
 
+                        List<Question> quiz = quizManager.CreateQuiz(quizCategory);
+                        int points = 0;
+
+                        for(int i = 0; i < quiz.Count; i++)
+                        {
+                            Console.WriteLine(quiz[i].Query);
+                            string? userAnswer = Console.ReadLine();
+
+                            bool correct = quizManager.CorrectingQuiz(i, userAnswer!); //Lägg till kontroll
+
+                            if (correct == true)
+                            {
+                                points++;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Wrong. Correct answer:\n {quiz[i].Answer}");
+                                Console.WriteLine("Press any button to continue.");
+                                Console.ReadKey();
+                            }
+
+                        }
+
+                        Console.WriteLine($"You got {points}/{quiz.Count} points!");
 
                         break;
 
                     case '2':
-                        Console.WriteLine("Choose category: \n");
-                        Console.WriteLine("1. History");
-                        Console.WriteLine("2. Geography");
-                        Console.WriteLine("3. Pop culture");
-                        Console.WriteLine("4. Food and drink");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\n\nChoose category: \n");
+                        Console.ResetColor();
 
-                        int catIndex = Console.ReadKey().KeyChar;
+                        for(int i = 0; i < allCategories.Count; i++)
+                        {
+                            Console.WriteLine( i + ". " + allCategories[i].Name);
+                        }
 
-                        //Läs ut alla frågor och svar med index
+                        char catIndexChar = Console.ReadKey().KeyChar;
+                        int catIndex = catIndexChar - '0';
 
-                        Console.WriteLine("\nChoose measure: \n");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("\n\nAll questions in this category: ");
+                        Console.ResetColor();
+
+                        for (int i = 0; i < allCategories[catIndex].CategorizedQuestions.Count; i++)
+                        {
+                            Console.WriteLine($"{i}. {allCategories[catIndex].CategorizedQuestions[i].Query} {allCategories[catIndex].CategorizedQuestions[i].Answer}.");
+                        }
+
+                        Console.WriteLine("\n\nPress any button to continue.");
+                        Console.ReadKey();
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\n\nChoose measure: \n");
+                        Console.ResetColor();
+
                         Console.WriteLine("1. Add question");
                         Console.WriteLine("2. Delete question");
                         Console.WriteLine("3. Edit question");
@@ -62,43 +113,52 @@ namespace program
 
                         if (edit == '1')
                         {
-                            Console.WriteLine("\n State question: ");
+                            Console.WriteLine("\n\nState question: ");
                             string? newQuestion = Console.ReadLine();
 
-                            Console.WriteLine("\n State answer: ");
+                            Console.WriteLine("\n\nState answer: ");
                             string? newAnswer = Console.ReadLine();
 
-                            manager.AddQuestion(catIndex, newQuestion!, newAnswer!);
+                            categoryManager.AddQuestion(catIndex, newQuestion!, newAnswer!);
 
-                            Console.WriteLine("Question added! Press any button to continue."); //Lägg till kontroll
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\n\nQuestion added! Press any button to continue."); //Lägg till kontroll
+                            Console.ResetColor();
                             Console.ReadKey();
 
                         }
                         else if (edit == '2')
                         {
-                            Console.WriteLine("\n State index of question: ");
-                            int questIndex = Console.ReadKey().KeyChar;
+                            Console.WriteLine("\n\nState index of question: ");
+                            char questIndexChar = Console.ReadKey().KeyChar;
+                            int questIndex = questIndexChar - '0';
 
-                            manager.DeleteQuestion(catIndex, questIndex);
+                            categoryManager.DeleteQuestion(catIndex, questIndex);
 
-                            Console.WriteLine("Question deleted! Press any button to continue."); //Lägg till kontroll 
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\n\nQuestion deleted! Press any button to continue."); //Lägg till kontroll 
+                            Console.ResetColor();
                             Console.ReadKey();
 
                         }
                         else if (edit == '3')
                         {
-                            Console.WriteLine("\n State index of question: ");
-                            int questIndex = Console.ReadKey().KeyChar;
 
-                            Console.WriteLine("\n State question: ");
+                            Console.WriteLine("\n\nState index of question: "); //Lägg till kontroll 
+                            char questIndexChar = Console.ReadKey().KeyChar;
+                            int questIndex = questIndexChar - '0';
+
+                            Console.WriteLine("\nState question: "); //Lägg till kontroll 
                             string? editQuestion = Console.ReadLine();
 
-                            Console.WriteLine("\n State answer: ");
+                            Console.WriteLine("\nState answer: "); //Lägg till kontroll 
                             string? editAnswer = Console.ReadLine();
 
-                            manager.UpdateQuestion(catIndex, questIndex, editQuestion!, editAnswer!);
+                            categoryManager.UpdateQuestion(catIndex, questIndex, editQuestion!, editAnswer!);
 
-                            Console.WriteLine("Question updated! Press any button to continue."); //Lägg till kontroll 
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\n\nQuestion updated! Press any button to continue."); //Lägg till kontroll 
+                            Console.ResetColor();
                             Console.ReadKey();
 
                         }
