@@ -54,7 +54,9 @@ namespace program
 
                         for(int i = 0; i < quiz.Count; i++)
                         {
-                            Console.WriteLine(quiz[i].Query);
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine($"\n\n{quiz[i].Query}");
+                            Console.ResetColor();
                             string? userAnswer = Console.ReadLine();
 
                             bool correct = quizManager.CorrectingQuiz(i, userAnswer!); //Lägg till kontroll
@@ -62,17 +64,27 @@ namespace program
                             if (correct == true)
                             {
                                 points++;
+
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("\nCorrect!");
+                                Console.ResetColor();
                             }
                             else
                             {
-                                Console.WriteLine($"Wrong. Correct answer:\n {quiz[i].Answer}");
-                                Console.WriteLine("Press any button to continue.");
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine($"\nWrong. Correct answer:\n{quiz[i].Answer}");
+                                Console.ResetColor();
+                                Console.WriteLine("\nPress any button to continue.");
                                 Console.ReadKey();
                             }
 
                         }
 
-                        Console.WriteLine($"You got {points}/{quiz.Count} points!");
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine($"\nYou got {points}/{quiz.Count} points!");
+                        Console.ResetColor();
+                        Console.WriteLine("Press any button to continue.");
+                        Console.ReadKey();
 
                         break;
 
@@ -98,7 +110,7 @@ namespace program
                             Console.WriteLine($"{i}. {allCategories[catIndex].CategorizedQuestions[i].Query} {allCategories[catIndex].CategorizedQuestions[i].Answer}.");
                         }
 
-                        Console.WriteLine("\n\nPress any button to continue.");
+                        Console.WriteLine("\nPress any button to continue.");
                         Console.ReadKey();
 
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -116,13 +128,13 @@ namespace program
                             Console.WriteLine("\n\nState question: ");
                             string? newQuestion = Console.ReadLine();
 
-                            Console.WriteLine("\n\nState answer: ");
+                            Console.WriteLine("\nState answer: ");
                             string? newAnswer = Console.ReadLine();
 
                             categoryManager.AddQuestion(catIndex, newQuestion!, newAnswer!);
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\n\nQuestion added! Press any button to continue."); //Lägg till kontroll
+                            Console.WriteLine("\nQuestion added! Press any button to continue."); //Lägg till kontroll
                             Console.ResetColor();
                             Console.ReadKey();
 
@@ -136,7 +148,7 @@ namespace program
                             categoryManager.DeleteQuestion(catIndex, questIndex);
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\n\nQuestion deleted! Press any button to continue."); //Lägg till kontroll 
+                            Console.WriteLine("\nQuestion deleted! Press any button to continue."); //Lägg till kontroll 
                             Console.ResetColor();
                             Console.ReadKey();
 
@@ -148,7 +160,7 @@ namespace program
                             char questIndexChar = Console.ReadKey().KeyChar;
                             int questIndex = questIndexChar - '0';
 
-                            Console.WriteLine("\nState question: "); //Lägg till kontroll 
+                            Console.WriteLine("\n\nState question: "); //Lägg till kontroll 
                             string? editQuestion = Console.ReadLine();
 
                             Console.WriteLine("\nState answer: "); //Lägg till kontroll 

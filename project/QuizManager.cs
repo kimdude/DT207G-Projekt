@@ -18,7 +18,7 @@ namespace quizManager
         {
             randomQuestions.Clear();
             allQuestions = manager.GetQuestions();
-            
+
             List<Question> catQuestions = allQuestions[catIndex].CategorizedQuestions;
 
             //Randomisera 5st frågor och lägg i list randomQuestions
@@ -49,7 +49,7 @@ namespace quizManager
         public bool CorrectingQuiz(int questIndex, string userAnswer)
         {
 
-            if(userAnswer.ToUpper() == randomQuestions[questIndex].Answer!.ToUpper()) //Ändra till randomQuestions[questIndex].Answer!
+            if(randomQuestions[questIndex].Answer!.ToUpper().Contains(userAnswer.ToUpper())) //Ändra till randomQuestions[questIndex].Answer!
             {
                 return true;
 
