@@ -9,65 +9,66 @@ namespace quizManager
 {
     public class QuizManager
     {
+        //Skapar instanser
         CategoryManager manager = new CategoryManager();
         Random random = new Random();
 
-        public List<Category> allQuestions = new List<Category>();
-        public List<Question> randomQuestions = new List<Question>();
+        public List<Category> allQuestions = new List<Category>(); //Lista med samtliga kategorier
+        public List<Question> randomQuestions = new List<Question>(); //Lista med fem slumpmässiga frågor
 
+        //Tar emot index för vald kategori och skapar quiz
         public List<Question> CreateQuiz(int catIndex)
         {
-            randomQuestions.Clear();
-            allQuestions = manager.GetQuestions();
+            randomQuestions.Clear(); //Tömmer lista på gamla frågor
+            allQuestions = manager.GetQuestions(); //Hämtar samtliga frågor och kategorier
 
-            List<Question> catQuestions = allQuestions[catIndex].CategorizedQuestions;
+            List<Question> catQuestions = allQuestions[catIndex].CategorizedQuestions; //Hämtar samtliga frågor inom vald kategori
 
-            //Randomisera 5st frågor och lägg i list randomQuestions
-            List<int> intsArray = new List<int>();
+            List<int> intsArray = new List<int>(); //Skapar ny lista för fem slumpmässiga siffror som blir index för frågor
 
             for (int i = 0; intsArray.Count < 5; i++)
             {
-                int newInt = random.Next(0, catQuestions.Count);
+                int newInt = random.Next(0, catQuestions.Count);  //Skapar slumpmässig siffra mellan 0 och längden på listan med frågor inom kategorin.
 
+                //Kontrollerar att inga dublett siffror genereras
                 if (!intsArray.Contains(newInt))
                 {
                     intsArray.Add(newInt);
                 }
             }
-            
-            //Använd intsArray som index för frågor
-            for(int i = 0; i < 5; i++)
+
+            for (int i = 0; i < 5; i++)
             {
+                //Använder slumpmässigt genererade siffror som index på frågor
                 int questionIndex = intsArray[i];
                 Question addQuestion = catQuestions[questionIndex];
 
+                //Lägger till utvalda frågor i aktuell lista för quizzet
                 randomQuestions.Add(addQuestion);
             }
 
             return randomQuestions;
         }
 
+        //Tar emot index på fråga och använderns svar och returnerar true för korrekt, respektive false för fel svar
         public bool CorrectingQuiz(int questIndex, string userAnswer)
         {
 
-            //Ta bort tecken från svar, dela in varje ord, skapa lista med orden, jämför listorna
-            string userInput = userAnswer.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper();
-            List<string> userList = Regex.Split(userInput, @"\s+").ToList(); //Splittrar vid whitespace, \s+ betyder ett eller fler whitespaces
+            string userInput = userAnswer.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper(); //Ersätter tecken med mellanslag i svaret
+            List<string> userList = Regex.Split(userInput, @"\s+").ToList(); //Splittrar vid varje mellanslag och lägger in varje ord i en lista
 
-
-            string correctAnswer = randomQuestions[questIndex].Answer!.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper();
+            string correctAnswer = randomQuestions[questIndex].Answer!.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper(); 
             List<string> correctList = Regex.Split(correctAnswer, @"\s+").ToList();
 
+            //Kontrollerar att alla ord från användarens svar finns med i listan för korrekt svar
             for (int i = 0; i < userList.Count; i++)
             {
                 if (!correctList.Contains(userList[i]))
                 {
                     return false;
-
                 }
-                
             }
-            
+
             return true;
         }
 
