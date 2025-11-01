@@ -1,5 +1,6 @@
 /* Metoder för quiz funktionalitet */
 
+using System.Text.RegularExpressions;
 using categories;
 using categoryManager;
 using questions;
@@ -49,14 +50,25 @@ namespace quizManager
         public bool CorrectingQuiz(int questIndex, string userAnswer)
         {
 
-            if(randomQuestions[questIndex].Answer!.ToUpper().Contains(userAnswer.ToUpper())) //Ändra till randomQuestions[questIndex].Answer!
-            {
-                return true;
+            //Ta bort tecken från svar, dela in varje ord, skapa lista med orden, jämför listorna
+            string userInput = userAnswer.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper();
+            List<string> userList = Regex.Split(userInput, @"\s+").ToList(); //Splittrar vid whitespace, \s+ betyder ett eller fler whitespaces
 
-            } else
+
+            string correctAnswer = randomQuestions[questIndex].Answer!.Replace(",", " ").Replace("-", " ").Replace(".", " ").Replace(":", " ").Replace(";", " ").ToUpper();
+            List<string> correctList = Regex.Split(correctAnswer, @"\s+").ToList();
+
+            for (int i = 0; i < userList.Count; i++)
             {
-                return false;
+                if (!correctList.Contains(userList[i]))
+                {
+                    return false;
+
+                }
+                
             }
+            
+            return true;
         }
 
     }

@@ -23,9 +23,9 @@ namespace program
                 Console.Clear();
 
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("============================");
-                Console.WriteLine("          QUIZ ME           ");
-                Console.WriteLine("============================\n\n");
+                Console.WriteLine("====================================");
+                Console.WriteLine("              QUIZ ME               ");
+                Console.WriteLine("====================================\n\n");
                 Console.ResetColor();
 
                 Console.WriteLine("1. Start quiz");
