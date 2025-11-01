@@ -24,9 +24,9 @@ namespace program
                 Console.Clear();
 
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("====================================");
-                Console.WriteLine("              QUIZ ME               ");
-                Console.WriteLine("====================================\n\n");
+                Console.WriteLine("===============================================================");
+                Console.WriteLine("                            QUIZ ME                            ");
+                Console.WriteLine("===============================================================\n\n");
                 Console.ResetColor();
 
                 //Startmeny
@@ -52,7 +52,26 @@ namespace program
                         }
 
                         char quizCatChar = Console.ReadKey().KeyChar;
-                        int quizCategory = quizCatChar - '0'; //Omvandlar char till int
+                        int quizCategory;
+
+                        //Kontrollerar om tryparse fungerar, lagrar resultat i quizcategory eller ger felmeddelande
+                        if (!int.TryParse(quizCatChar.ToString(), out quizCategory))
+                        {
+                            Console.WriteLine("\n\nInvalid input. Press any button to continue.");
+                            Console.ReadKey();
+                            break;
+                        } else if (quizCategory > allCategories.Count - 1)
+                        {
+                            Console.WriteLine("\n\nInvalid input. Choose option 1, 2 or 3. Press any button to continue.");
+                            Console.ReadKey();
+                            break;
+                        }
+
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("\n\n--------------------------------------------------------------");
+                        Console.WriteLine($"               Five questions about {allCategories[quizCategory].Name}");
+                        Console.WriteLine("--------------------------------------------------------------");
+                        Console.ResetColor();
 
                         //Skapar quiz med 5 slumpmässiga frågor
                         List<Question> quiz = quizManager.CreateQuiz(quizCategory);
@@ -67,7 +86,7 @@ namespace program
                             string? userAnswer = Console.ReadLine();
 
                             //Rättar svar
-                            bool correct = quizManager.CorrectingQuiz(i, userAnswer!);                          //Lägg till kontroll
+                            bool correct = quizManager.CorrectingQuiz(i, userAnswer!);
 
                             //Räknar poäng
                             if (correct == true)
@@ -112,11 +131,15 @@ namespace program
                         }
 
                         char catIndexChar = Console.ReadKey().KeyChar;
-                        int catIndex = catIndexChar - '0';
+                        int catIndex;
 
-
-                        //Kontroll för korrekt menyval
-                        if (catIndex != 1 | catIndex != 2 | catIndex != 3)
+                        //Kontrollerar om tryparse fungerar, lagrar resultat i quizcategory eller ger felmeddelande
+                        if (!int.TryParse(catIndexChar.ToString(), out catIndex))
+                        {
+                            Console.WriteLine("\n\nInvalid input. Press any button to continue.");
+                            Console.ReadKey();
+                            break;
+                        } else if (catIndex > allCategories.Count - 1)
                         {
                             Console.WriteLine("\n\nInvalid input. Choose option 1, 2 or 3. Press any button to continue.");
                             Console.ReadKey();
@@ -157,11 +180,21 @@ namespace program
                             Console.WriteLine("\nState answer: ");
                             string? newAnswer = Console.ReadLine();
 
-                            //Lägger till ny fråga
-                            categoryManager.AddQuestion(catIndex, newQuestion!, newAnswer!);
+                            //Kontroll att frågor och svar angetts
+                            if(!string.IsNullOrEmpty(newQuestion) || !string.IsNullOrEmpty(newAnswer))
+                            {
+                                //Lägger till ny fråga
+                                categoryManager.AddQuestion(catIndex, newQuestion!, newAnswer!);                             
+                            } else
+                            {
+                                Console.WriteLine("\n\nIncorrect input. Input fields cannot be empty. Press any button to continue.");
+                                Console.ReadKey();
+                                
+                                break;
+                            }
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\nQuestion added! Press any button to continue."); //Lägg till kontroll
+                            Console.WriteLine("\nQuestion added! Press any button to continue.");
                             Console.ResetColor();
                             Console.ReadKey();
 
@@ -171,40 +204,100 @@ namespace program
 
                             //Funktionalitet för att ta bort fråga
                             Console.WriteLine("\n\nState index of question: ");
-                            char questIndexChar = Console.ReadKey().KeyChar;
-                            int questIndex = questIndexChar - '0';
+                            string? questIndexStr = Console.ReadLine();
+                            int questIndex = 0;
+
+                            try
+                            {
+                                questIndex = Int32.Parse(questIndexStr!);
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("\nIncorrect input. Check given index.");
+                                Console.ReadKey();
+
+                                break;
+                            }
+
+                            //Kontroll att index stämmer
+                            if (questIndex > allCategories[catIndex].CategorizedQuestions.Count - 1)
+                            {
+                                Console.WriteLine("\nIncorrect input. Check given index.");
+                                Console.ReadKey();
+
+                                break;
+                            }
 
                             //Tar bort fråga
-                            categoryManager.DeleteQuestion(catIndex, questIndex);
+                            bool deleted = categoryManager.DeleteQuestion(catIndex, questIndex);
 
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\nQuestion deleted! Press any button to continue.");                 //Lägg till kontroll 
-                            Console.ResetColor();
-                            Console.ReadKey();
+                            if (deleted == true)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("\nQuestion deleted! Press any button to continue.");
+                                Console.ResetColor();
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cannot delete question. Category must contain atleast five questions. Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            }
 
                         }
                         else if (edit == '3')
                         {
 
                             //Funktionalitet för att ändra fråga
-                            Console.WriteLine("\n\nState index of question: ");                                     //Lägg till kontroll 
-                            char questIndexChar = Console.ReadKey().KeyChar;
-                            int questIndex = questIndexChar - '0';
+                            Console.WriteLine("\n\nState index of question: ");                                    
 
-                            Console.WriteLine("\n\nState question: ");                                              //Lägg till kontroll 
+                            string? questIndexStr = Console.ReadLine();
+                            int questIndex;
+
+                            //Kontrollerar om tryparse fungerar, lagrar resultat i quizcategory eller ger felmeddelande
+                            if (!int.TryParse(questIndexStr, out questIndex))
+                            {
+                                Console.WriteLine("\n\nInvalid input. Press any button to continue.");
+                                Console.ReadKey();
+                                break;
+                            } else if (questIndex > allCategories[catIndex].CategorizedQuestions.Count - 1)
+                            {
+                                Console.WriteLine("\n\nInvalid input. Choose option 1, 2 or 3. Press any button to continue.");
+                                Console.ReadKey();
+                                break;
+                            }
+
+                            Console.WriteLine("\n\nState question: ");                                              
                             string? editQuestion = Console.ReadLine();
 
-                            Console.WriteLine("\nState answer: ");                                                  //Lägg till kontroll 
+                            Console.WriteLine("\nState answer: ");
                             string? editAnswer = Console.ReadLine();
+                            
+                            //Kontroll att frågor och svar angetts
+                            if(!string.IsNullOrEmpty(editQuestion) || !string.IsNullOrEmpty(editAnswer))
+                            {
+                                //Uppdaterar fråga
+                                categoryManager.UpdateQuestion(catIndex, questIndex, editQuestion!, editAnswer!);                              
+                            } else
+                            {
+                                Console.WriteLine("\n\nIncorrect input. Input fields cannot be empty. Press any button to continue.");
+                                Console.ReadKey();
 
-                            //Uppdaterar fråga
-                            categoryManager.UpdateQuestion(catIndex, questIndex, editQuestion!, editAnswer!);
+                                break;
+                            }
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\n\nQuestion updated! Press any button to continue.");               //Lägg till kontroll 
+                            Console.WriteLine("\n\nQuestion updated! Press any button to continue."); 
                             Console.ResetColor();
                             Console.ReadKey();
 
+                        } 
+                        else
+                        {
+                            //Kontroll för korrekt menyval
+                            Console.WriteLine("\n\nInvalid input. Choose option 1, 2 or 3. Press any button to continue.");
+                            Console.ReadKey();
                         }
 
                         break;

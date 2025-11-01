@@ -44,12 +44,19 @@ namespace categoryManager
         }
 
         //Tar emot kategorins och frågans index för att ta bort frågan
-        public int DeleteQuestion(int catIndex, int questIndex)
+        public bool DeleteQuestion(int catIndex, int questIndex)
         {
+
+            //Kontrollerar att tillräckligt många frågor finns kvar för att skapa quiz
+            if (allCategories[catIndex].CategorizedQuestions.Count < 5)
+            {
+                return false;
+            }
+            
             allCategories[catIndex].CategorizedQuestions.RemoveAt(questIndex);
             serialize();
 
-            return questIndex;
+            return true;
         }
 
         //Tar emot kategorins och frågans index, fråga och svar för att uppdatera frågan
