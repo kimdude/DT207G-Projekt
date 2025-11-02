@@ -204,27 +204,20 @@ namespace program
 
                             //Funktionalitet för att ta bort fråga
                             Console.WriteLine("\n\nState index of question: ");
+  
                             string? questIndexStr = Console.ReadLine();
-                            int questIndex = 0;
+                            int questIndex;
 
-                            try
+                            //Kontrollerar och omvandlar till Int
+                            if (!int.TryParse(questIndexStr, out questIndex))
                             {
-                                questIndex = Int32.Parse(questIndexStr!);
-                            }
-                            catch (Exception)
-                            {
-                                Console.WriteLine("\nIncorrect input. Check given index.");
+                                Console.WriteLine("\n\nInvalid input. Press any button to continue.");
                                 Console.ReadKey();
-
                                 break;
-                            }
-
-                            //Kontroll att index stämmer
-                            if (questIndex > allCategories[catIndex].CategorizedQuestions.Count - 1)
+                            } else if (questIndex > allCategories[catIndex].CategorizedQuestions.Count - 1)
                             {
-                                Console.WriteLine("\nIncorrect input. Check given index.");
+                                Console.WriteLine("\n\nInvalid input. Check given index. Press any button to continue.");
                                 Console.ReadKey();
-
                                 break;
                             }
 
@@ -255,7 +248,7 @@ namespace program
                             string? questIndexStr = Console.ReadLine();
                             int questIndex;
 
-                            //Kontrollerar om tryparse fungerar, lagrar resultat i quizcategory eller ger felmeddelande
+                            //Kontrollerar och omvandlar till Int
                             if (!int.TryParse(questIndexStr, out questIndex))
                             {
                                 Console.WriteLine("\n\nInvalid input. Press any button to continue.");

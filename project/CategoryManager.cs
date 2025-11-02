@@ -17,7 +17,7 @@ namespace categoryManager
             if (File.Exists(filename) == true)
             {
                 string fileContent = File.ReadAllText(filename);
-                allCategories = JsonSerializer.Deserialize<List<Category>>(fileContent)!;
+                allCategories = JsonSerializer.Deserialize<List<Category>>(fileContent)!; //Lagrar all data i allCategories
             }
         }
 
@@ -38,7 +38,7 @@ namespace categoryManager
 
             //Lägger till objektet i kategorin
             allCategories[catIndex].CategorizedQuestions.Add(newQuestion);
-            serialize(); //Serialiserar uppdaterade listan
+            Serialize(); //Serialiserar uppdaterade listan
 
             return newQuestion;
         }
@@ -54,7 +54,7 @@ namespace categoryManager
             }
             
             allCategories[catIndex].CategorizedQuestions.RemoveAt(questIndex);
-            serialize();
+            Serialize();
 
             return true;
         }
@@ -67,13 +67,13 @@ namespace categoryManager
             updatedQuestion.Answer = answer;
             allCategories[catIndex].CategorizedQuestions[questIndex] = updatedQuestion; //Byter ut gamla frågan till nya objektet
 
-            serialize();
+            Serialize();
 
             return updatedQuestion;
         }
 
         //Serialiserar listan och lagrar i json-fil
-        private void serialize()
+        private void Serialize()
         {
             string jsonString = JsonSerializer.Serialize(allCategories);
             File.WriteAllText(filename, jsonString);

@@ -24,23 +24,23 @@ namespace quizManager
 
             List<Question> catQuestions = allQuestions[catIndex].CategorizedQuestions; //Hämtar samtliga frågor inom vald kategori
 
-            List<int> intsArray = new List<int>(); //Skapar ny lista för fem slumpmässiga siffror som blir index för frågor
+            List<int> intsList = new List<int>(); //Skapar ny lista för fem slumpmässiga siffror som blir index för frågor
 
-            for (int i = 0; intsArray.Count < 5; i++)
+            for (int i = 0; intsList.Count < 5; i++)
             {
                 int newInt = random.Next(0, catQuestions.Count);  //Skapar slumpmässig siffra mellan 0 och längden på listan med frågor inom kategorin.
 
                 //Kontrollerar att inga dublett siffror genereras
-                if (!intsArray.Contains(newInt))
+                if (!intsList.Contains(newInt))
                 {
-                    intsArray.Add(newInt);
+                    intsList.Add(newInt);
                 }
             }
 
             for (int i = 0; i < 5; i++)
             {
                 //Använder slumpmässigt genererade siffror som index på frågor
-                int questionIndex = intsArray[i];
+                int questionIndex = intsList[i];
                 Question addQuestion = catQuestions[questionIndex];
 
                 //Lägger till utvalda frågor i aktuell lista för quizzet

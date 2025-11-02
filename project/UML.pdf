@@ -1,0 +1,727 @@
+%PDF-1.4
+%‚„œ”
+
+1 0 obj
+   << 
+      /Title ()
+      /Author ()
+      /Subject ()
+      /Keywords ()
+      /Creator (FreeHEP Graphics2D Driver)
+      /Producer (com.horstmann.violet.framework.util.PDFGraphics2DStringWriter Revision)
+      /CreationDate (D:20251102104727+01'00')
+      /ModDate (D:20251102104727+01'00')
+      /Trapped /False
+   >>
+endobj
+
+2 0 obj
+   << 
+      /Type /Catalog
+      /Pages 3 0 R
+      /Outlines 4 0 R
+      /PageMode /UseOutlines
+      /ViewerPreferences 5 0 R
+      /OpenAction [6 0 R /Fit]
+   >>
+endobj
+
+5 0 obj
+   << 
+      /FitWindow true
+      /CenterWindow false
+   >>
+endobj
+
+6 0 obj
+   << 
+      /Parent 3 0 R
+      /Type /Page
+      /Contents 7 0 R
+   >>
+endobj
+
+7 0 obj
+   << 
+      /Length 8 0 R
+   >>
+stream
+.90698 0.0000 0.0000 -.90698 28.372 410.00 cm
+q
+0.0000 0.0000 m
+610.00 0.0000 l
+610.00 430.00 l
+0.0000 430.00 l
+h
+W
+n
+q
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+Q
+q
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+0.0000 0.0000 m
+0.0000 430.00 l
+610.00 430.00 l
+610.00 0.0000 l
+h
+W
+n
+1.0000 0.0000 0.0000 1.0000 -130.00 -170.00 cm
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+130.00 170.00 m
+741.00 170.00 l
+741.00 601.00 l
+130.00 601.00 l
+130.00 170.00 l
+h
+f
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+520.00 170.00 m
+740.00 170.00 l
+740.00 370.00 l
+520.00 370.00 l
+520.00 170.00 l
+h
+f
+/Alpha1 gs
+.74902 .74902 .74902 rg
+.74902 .74902 .74902 RG
+520.00 170.00 m
+740.00 170.00 l
+740.00 370.00 l
+520.00 370.00 l
+520.00 170.00 l
+h
+S
+520.50 210.50 m
+740.50 210.50 l
+S
+520.50 310.50 m
+740.50 310.50 l
+S
+/Alpha1 gs
+.20000 .20000 .20000 rg
+.20000 .20000 .20000 RG
+1.0000 0.0000 0.0000 1.0000 520.00 170.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 80.000 25.000 cm
+BT
+0.0000 0.0000 Td
+/F1 12.000 Tf
+(QuizManager) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -520.00 -170.00 cm
+1.0000 0.0000 0.0000 1.0000 520.00 210.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 31.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(- manager: CategoryManager) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 47.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(- random: Random) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 63.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ allQuestions: List<Category>) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 79.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ randomQuestions: List<Question>) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -520.00 -210.00 cm
+1.0000 0.0000 0.0000 1.0000 520.00 310.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 27.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ CreateQuiz\(Int\): List<Question>) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 43.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ CorrectingQuiz\(Int, String\): Bool) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -520.00 -310.00 cm
+1.0000 0.0000 0.0000 1.0000 -0.0000 -0.0000 cm
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+130.00 170.00 m
+410.00 170.00 l
+410.00 390.00 l
+130.00 390.00 l
+130.00 170.00 l
+h
+f
+/Alpha1 gs
+.74902 .74902 .74902 rg
+.74902 .74902 .74902 RG
+130.00 170.00 m
+410.00 170.00 l
+410.00 390.00 l
+130.00 390.00 l
+130.00 170.00 l
+h
+S
+130.50 210.50 m
+410.50 210.50 l
+S
+130.50 270.50 m
+410.50 270.50 l
+S
+/Alpha1 gs
+.20000 .20000 .20000 rg
+.20000 .20000 .20000 RG
+1.0000 0.0000 0.0000 1.0000 130.00 170.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 97.000 25.000 cm
+BT
+0.0000 0.0000 Td
+/F1 12.000 Tf
+(CategoryManager) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -130.00 -170.00 cm
+1.0000 0.0000 0.0000 1.0000 130.00 210.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 27.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(- filename: string) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 43.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ allCategories: List<Category>) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -130.00 -210.00 cm
+1.0000 0.0000 0.0000 1.0000 130.00 270.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 25.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ CategoryManager\(\)) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 41.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ GetQuestions\(\): List<Category>) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 57.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ AddQuestion\(Int, String, String\): Question) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 73.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ DeleteQuestion\(Int, Int\): Bool) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 89.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ UpdateQuestion\(Int, Int, String, String\): Question) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 105.00 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(- Serialize\(\)) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -130.00 -270.00 cm
+1.0000 0.0000 0.0000 1.0000 -0.0000 -0.0000 cm
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+140.00 480.00 m
+360.00 480.00 l
+360.00 600.00 l
+140.00 600.00 l
+140.00 480.00 l
+h
+f
+/Alpha1 gs
+.74902 .74902 .74902 rg
+.74902 .74902 .74902 RG
+140.00 480.00 m
+360.00 480.00 l
+360.00 600.00 l
+140.00 600.00 l
+140.00 480.00 l
+h
+S
+140.50 520.50 m
+360.50 520.50 l
+S
+140.50 580.50 m
+360.50 580.50 l
+S
+/Alpha1 gs
+.20000 .20000 .20000 rg
+.20000 .20000 .20000 RG
+1.0000 0.0000 0.0000 1.0000 140.00 480.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 92.000 25.000 cm
+BT
+0.0000 0.0000 Td
+/F1 12.000 Tf
+(Category) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -140.00 -480.00 cm
+1.0000 0.0000 0.0000 1.0000 140.00 520.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 27.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ Name: string) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 43.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ CategorizedQuestion: List<Question>) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -140.00 -520.00 cm
+1.0000 0.0000 0.0000 1.0000 140.00 580.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 15.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+() Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -140.00 -580.00 cm
+1.0000 0.0000 0.0000 1.0000 -0.0000 -0.0000 cm
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+1.0000 0.0000 0.0000 1.0000 0.0000 0.0000 cm
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+510.00 480.00 m
+610.00 480.00 l
+610.00 600.00 l
+510.00 600.00 l
+510.00 480.00 l
+h
+f
+/Alpha1 gs
+.74902 .74902 .74902 rg
+.74902 .74902 .74902 RG
+510.00 480.00 m
+610.00 480.00 l
+610.00 600.00 l
+510.00 600.00 l
+510.00 480.00 l
+h
+S
+510.50 520.50 m
+610.50 520.50 l
+S
+510.50 580.50 m
+610.50 580.50 l
+S
+/Alpha1 gs
+.20000 .20000 .20000 rg
+.20000 .20000 .20000 RG
+1.0000 0.0000 0.0000 1.0000 510.00 480.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 32.000 25.000 cm
+BT
+0.0000 0.0000 Td
+/F1 12.000 Tf
+(Question) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -510.00 -480.00 cm
+1.0000 0.0000 0.0000 1.0000 510.00 520.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 27.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ Query: string) Tj
+ET
+Q
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 43.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+(+ Answer: string) Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -510.00 -520.00 cm
+1.0000 0.0000 0.0000 1.0000 510.00 580.00 cm
+q
+1.0000 0.0000 0.0000 -1.0000 2.0000 15.000 cm
+BT
+0.0000 0.0000 Td
+/F2 12.000 Tf
+() Tj
+ET
+Q
+1.0000 0.0000 0.0000 1.0000 -510.00 -580.00 cm
+1.0000 0.0000 0.0000 1.0000 -0.0000 -0.0000 cm
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+410.00 280.00 m
+520.00 280.00 l
+S
+S
+418.66 285.00 m
+410.00 280.00 l
+418.66 275.00 l
+410.00 280.00 l
+418.66 285.00 l
+h
+S
+1.0000 0.0000 0.0000 1.0000 421.66 261.00 cm
+q
+q
+q
+Q
+q
+Q
+q
+Q
+q
+Q
+4.4688 13.000 m
+3.4219 13.000 l
+3.4219 6.2812 l
+3.1615 6.5208 2.8229 6.7656 2.4062 7.0156 c
+2.0000 7.2552 1.6354 7.4323 1.3125 7.5469 c
+1.3125 6.5312 l
+1.8958 6.2500 2.4062 5.9167 2.8438 5.5312 c
+3.2917 5.1354 3.6094 4.7500 3.7969 4.3750 c
+4.4688 4.3750 l
+4.4688 13.000 l
+h
+f
+Q
+Q
+1.0000 0.0000 0.0000 1.0000 -421.66 -261.00 cm
+250.00 480.00 m
+250.00 435.00 l
+270.00 435.00 l
+270.00 390.00 l
+S
+S
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+250.00 480.00 m
+255.00 471.34 l
+250.00 462.68 l
+245.00 471.34 l
+h
+f
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+250.00 480.00 m
+255.00 471.34 l
+250.00 462.68 l
+245.00 471.34 l
+h
+S
+1.0000 0.0000 0.0000 1.0000 263.00 461.00 cm
+q
+q
+q
+Q
+q
+Q
+q
+Q
+q
+Q
+.50000 8.7656 m
+.50000 7.7448 .60417 6.9271 .81250 6.3125 c
+1.0208 5.6875 1.3281 5.2083 1.7344 4.8750 c
+2.1510 4.5417 2.6719 4.3750 3.2969 4.3750 c
+3.7552 4.3750 4.1562 4.4688 4.5000 4.6562 c
+4.8542 4.8438 5.1458 5.1146 5.3750 5.4688 c
+5.6042 5.8125 5.7812 6.2344 5.9062 6.7344 c
+6.0312 7.2344 6.0938 7.9115 6.0938 8.7656 c
+6.0938 9.7760 5.9896 10.589 5.7812 11.203 c
+5.5833 11.818 5.2760 12.297 4.8594 12.641 c
+4.4531 12.974 3.9323 13.141 3.2969 13.141 c
+2.4740 13.141 1.8229 12.844 1.3438 12.250 c
+.78125 11.542 .50000 10.380 .50000 8.7656 c
+h
+1.5781 8.7656 m
+1.5781 10.172 1.7448 11.109 2.0781 11.578 c
+2.4115 12.047 2.8177 12.281 3.2969 12.281 c
+3.7865 12.281 4.1927 12.047 4.5156 11.578 c
+4.8490 11.109 5.0156 10.172 5.0156 8.7656 c
+5.0156 7.3490 4.8490 6.4115 4.5156 5.9531 c
+4.1927 5.4844 3.7812 5.2500 3.2812 5.2500 c
+2.8021 5.2500 2.4167 5.4531 2.1250 5.8594 c
+1.7604 6.3802 1.5781 7.3490 1.5781 8.7656 c
+h
+f
+Q
+Q
+1.0000 0.0000 0.0000 1.0000 -263.00 -461.00 cm
+510.00 540.00 m
+360.00 540.00 l
+S
+S
+/Alpha1 gs
+1.0000 1.0000 1.0000 rg
+1.0000 1.0000 1.0000 RG
+510.00 540.00 m
+501.34 535.00 l
+492.68 540.00 l
+501.34 545.00 l
+h
+f
+/Alpha1 gs
+0.0000 0.0000 0.0000 rg
+0.0000 0.0000 0.0000 RG
+510.00 540.00 m
+501.34 535.00 l
+492.68 540.00 l
+501.34 545.00 l
+h
+S
+1.0000 0.0000 0.0000 1.0000 482.68 521.00 cm
+q
+q
+q
+Q
+q
+Q
+q
+Q
+q
+Q
+.50000 8.7656 m
+.50000 7.7448 .60417 6.9271 .81250 6.3125 c
+1.0208 5.6875 1.3281 5.2083 1.7344 4.8750 c
+2.1510 4.5417 2.6719 4.3750 3.2969 4.3750 c
+3.7552 4.3750 4.1562 4.4688 4.5000 4.6562 c
+4.8542 4.8438 5.1458 5.1146 5.3750 5.4688 c
+5.6042 5.8125 5.7812 6.2344 5.9062 6.7344 c
+6.0312 7.2344 6.0938 7.9115 6.0938 8.7656 c
+6.0938 9.7760 5.9896 10.589 5.7812 11.203 c
+5.5833 11.818 5.2760 12.297 4.8594 12.641 c
+4.4531 12.974 3.9323 13.141 3.2969 13.141 c
+2.4740 13.141 1.8229 12.844 1.3438 12.250 c
+.78125 11.542 .50000 10.380 .50000 8.7656 c
+h
+1.5781 8.7656 m
+1.5781 10.172 1.7448 11.109 2.0781 11.578 c
+2.4115 12.047 2.8177 12.281 3.2969 12.281 c
+3.7865 12.281 4.1927 12.047 4.5156 11.578 c
+4.8490 11.109 5.0156 10.172 5.0156 8.7656 c
+5.0156 7.3490 4.8490 6.4115 4.5156 5.9531 c
+4.1927 5.4844 3.7812 5.2500 3.2812 5.2500 c
+2.8021 5.2500 2.4167 5.4531 2.1250 5.8594 c
+1.7604 6.3802 1.5781 7.3490 1.5781 8.7656 c
+h
+f
+Q
+Q
+1.0000 0.0000 0.0000 1.0000 -482.68 -521.00 cm
+Q
+Q
+
+endstream
+endobj
+
+8 0 obj
+   10487
+endobj
+
+9 0 obj
+   << 
+      /Type /Font
+      /Subtype /Type1
+      /Name /F1
+      /BaseFont /Helvetica-Bold
+      /Encoding 10 0 R
+   >>
+endobj
+
+11 0 obj
+   << 
+      /Type /Font
+      /Subtype /Type1
+      /Name /F2
+      /BaseFont /Helvetica
+      /Encoding 10 0 R
+   >>
+endobj
+
+10 0 obj
+   << 
+      /Type /Encoding
+      /Differences [0 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /breve /caron /circumflex /dotaccent /hungarumlaut /ogonek /ring /tilde /space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quotesingle /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash /zero /one /two /three /four /five /six /seven /eight /nine /colon /semicolon /less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar /braceright /asciitilde /.notdef /bullet /dagger /daggerdbl /ellipsis /emdash /endash /florin /fraction /guilsinglleft /guilsinglright /minus /perthousand /quotedblbase /quotedblleft /quotedblright /quoteleft /quoteright /quotesinglbase /trademark /fi /fl /Lslash /OE /Scaron /Ydieresis /Zcaron /dotlessi /lslash /oe /scaron /zcaron /.notdef /Euro /exclamdown /cent /sterling /currency /yen /brokenbar /section /dieresis /copyright /ordfeminine /guillemotleft /logicalnot /.notdef /registered /macron /degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered /cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis]
+   >>
+endobj
+
+3 0 obj
+   << 
+      /Parent null
+      /Type /Pages
+      /MediaBox [0.0000 0.0000 610.00 430.00]
+      /Resources 12 0 R
+      /Kids [6 0 R]
+      /Count 1
+   >>
+endobj
+
+13 0 obj
+   [/PDF /Text /ImageC]
+endobj
+
+14 0 obj
+   << 
+      /F1 9 0 R
+      /F2 11 0 R
+   >>
+endobj
+
+15 0 obj
+   << 
+      /Alpha1
+      << 
+         /ca 1.0000
+         /CA 1.0000
+         /BM /Normal
+         /AIS false
+      >>
+   >>
+endobj
+
+12 0 obj
+   << 
+      /ProcSet 13 0 R
+      /Font 14 0 R
+      /ExtGState 15 0 R
+   >>
+endobj
+
+4 0 obj
+   << 
+      /Type /Outlines
+      /First 16 0 R
+      /Last 16 0 R
+   >>
+endobj
+
+16 0 obj
+   << 
+      /Parent 4 0 R
+      /Title (Page 1 \(untitled\))
+      /Prev null
+      /Next null
+      /Dest [6 0 R /Fit]
+   >>
+endobj
+
+xref
+0 17
+0000000000 65535 f
+0000000019 00000 n
+0000000373 00000 n
+0000013781 00000 n
+0000014338 00000 n
+0000000566 00000 n
+0000000650 00000 n
+0000000747 00000 n
+0000011308 00000 n
+0000011337 00000 n
+0000011633 00000 n
+0000011487 00000 n
+0000014235 00000 n
+0000013964 00000 n
+0000014009 00000 n
+0000014079 00000 n
+0000014436 00000 n
+
+trailer
+<< 
+   /Size 16
+   /Root 2 0 R
+   /Info 1 0 R
+>>
+
+startxref
+14590
+
+%%EOF
